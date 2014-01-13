@@ -168,8 +168,6 @@ int main()
     std::string templateStr = getTemplate();
 
     setPersonInfo(firstName, lastName, emailAddress);
-    
-    std::cout << "Is valid email? : " << isValidEmailAddress(emailAddress);
 
     modifyTemplate(templateStr, firstName, lastName, emailAddress); 
   
