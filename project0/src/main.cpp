@@ -7,7 +7,6 @@
 */
 
 #include <iostream>
-#include <fstream>
 #include <string>
 
 // FUNCTION DECLARTION
@@ -20,6 +19,11 @@ void replaceWord(std::string& templateStr, int start, int range, std::string tar
 int getPosition(std::string templateStr, std::string keyword);
 bool hasMore(std::string templateStr, int start, std::string word);
 void showMessage(std::string message);
+bool isNumber(const char Character);
+bool isCharacter(const char Character);
+bool isValidEmailAddress(std::string email);
+
+std::string getTemplate();
 
 // END OF FUNCTION DECLARTION
 
@@ -40,9 +44,15 @@ void setLastName(std::string& lastName){
 
 // Function setEmailAddress: get email from user.
 void setEmailAddress(std::string& eMail){
-    std::cout << "Input your e-mail address: ";
-    std::getline(std::cin, eMail);
-
+    bool isNotValid = true;
+    while(isNotValid){
+        std::cout << "Input your e-mail address: ";
+        std::getline(std::cin, eMail);
+        if(isValidEmailAddress(eMail))
+            isNotValid = false;
+        else
+            std::cout << "Invalid e-mail adress. Please input valid one.\n";
+    }
     std::cout << std::endl << std::endl;
 }
 
@@ -92,9 +102,60 @@ bool hasMore(std::string templateStr, int start, std::string word) {
         return true;
     }
 }
+bool isCharacter(const char Character) {
+    return ( (Character >= 'a' && Character <= 'z') || (Character >= 'A' && Character <= 'Z') );
+}
+
+bool isNumber(const char Character) {
+    return ( Character >= '0' && Character <= '9');
+}
+
+bool isValidEmailAddress(std::string email) {
+
+    if(email.length() == 0) // if empty string
+        return false;
+    if(!isCharacter(email[0])) // if first letter of email string is not a character
+        return false;
+    
+    int atOffset = -1;
+    int dotOffset = -1;
+
+    for(int i = 0; i < email.length(); i++) {
+        if(email[i] == '@')
+            atOffset = i;
+        else if(email[i] == '.')
+            dotOffset = i;
+    }
+    
+    if( (atOffset == -1) || (dotOffset == -1) ) 
+        return false;
+    if(atOffset > dotOffset)
+        return false;
+    if(dotOffset >= email.length()-1)
+        return false;
+    
+    return true;
+       
+
+}
 
 void showMessage(std::string message) {
     std::cout << message;
+}
+
+std::string getTemplate() {
+
+    std::string templateStr = "From: Customer Service <customer_service@ics45c.com>\n"
+    "To: $FIRST_NAME $LAST_NAME <$EMAIL>\n"
+    "Subject: ICS45C appreciates your business!\n\n"
+    "Dear $FIRST_NAME $LAST_NAME:\n\n"
+    "We are writing today to thank you for your business, and to invite you\n"
+    "to contact us if you have any comments and concerns about your recent\n"
+    "order. If so, please email us at customer_services@ics45c.com and we\n"
+    "would be delighted to discuss them with you.\n\n\n\n"
+    "Many Thanks,\n\nICS45C Customer Service Team\n";
+
+    return templateStr;
 }
 
 // MAIN FUNCTION
@@ -104,25 +165,17 @@ int main()
     std::string lastName = "";
     std::string emailAddress= "";
     
-    std::string line = "";
-    std::string templateStr = "";
-    std::ifstream templateFile("template.txt");
-    
-    if(templateFile.is_open()){
-        while(std::getline(templateFile, line)) {
-           // std::cout << line << '\n';
-           templateStr += line;
-           templateStr = templateStr + "\n";
-        }
-    }else {
-        std::cout << "Unable to open file";
-    }
+    std::string templateStr = getTemplate();
 
     setPersonInfo(firstName, lastName, emailAddress);
-        
+    
+    std::cout << "Is valid email? : " << isValidEmailAddress(emailAddress);
+
     modifyTemplate(templateStr, firstName, lastName, emailAddress); 
   
     showMessage(templateStr);
+
+    
 
     return 0;
 }
