@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ics45c/projects/LetterNeverSent/src/datastruct.h
+string
+-
+
+/home/ics45c/projects/LetterNeverSent/src/main.cpp
+iostream
+-
+string
+-
+datastruct.h
+/home/ics45c/projects/LetterNeverSent/src/datastruct.h
+parcingutil.h
+/home/ics45c/projects/LetterNeverSent/src/parcingutil.h
+
+/home/ics45c/projects/LetterNeverSent/src/parcingutil.h
+datastruct.h
+/home/ics45c/projects/LetterNeverSent/src/datastruct.h
+string
+-
+
+/home/ics45c/projects/LetterNeverSent/src/paringutil.cpp
+parcingutil.h
+/home/ics45c/projects/LetterNeverSent/src/parcingutil.h
+
