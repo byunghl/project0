@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ics45c/projects/project2/src/datastruct.h
+string
+-
+
+/home/ics45c/projects/project2/src/main.cpp
+iostream
+-
+string
+-
+datastruct.h
+/home/ics45c/projects/project2/src/datastruct.h
+parcingutil.h
+/home/ics45c/projects/project2/src/parcingutil.h
+
+/home/ics45c/projects/project2/src/parcingutil.h
+datastruct.h
+/home/ics45c/projects/project2/src/datastruct.h
+string
+-
+
