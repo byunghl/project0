@@ -8,11 +8,15 @@ struct grade_artifact {
 	int weight;
 };
 
+
 struct student_info {
 	unsigned int studentID;
 	std::string nameOfStduent;
 	int* rawScores;
+	double totalScore;
+	char finalLetterGrade;
 };
+
 
 struct cutset {
 	double* aCutsets;

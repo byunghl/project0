@@ -1,7 +1,17 @@
+// Project1Core.cpp
+
+/*  Author: Byung Ho Lee
+**  Stduent ID: #60626811
+**
+**  Project #1: Stay (Faraway, So Close!)
+**  Due on Monday, January 27, 11:59pm
+**
+*/
+
 #include "Project1Core.h"
 #include <cmath>
 
-// WORKS FINE
+// Function that gets first line of input and return start location.
 Location getFirstLineInput() {
     bool isValid = false;
     std::string rawData = "";
@@ -13,6 +23,7 @@ Location getFirstLineInput() {
     return createLocation(rawData);
 }
 
+// Function that gets second line of input and return the inputed value.
 int getSecondLineInput() {
     std::string str = "";
     bool isNotValidInput = true;    
@@ -31,6 +42,7 @@ int getSecondLineInput() {
     return atoi(str.c_str());
 }
 
+// function that gets third line of input and save inputed value in vector then return the vector.
 std::vector<Location> getThirdLineInput(int numberOfTarget) {
     bool isValid = false;
     std::string rawData = "";
@@ -49,6 +61,8 @@ std::vector<Location> getThirdLineInput(int numberOfTarget) {
     return destinations;
 }
 
+// function that computes closest location and farthest location and save it in to vector. 
+// index 0 in vector is closest one and index 1 in vector is farthest one. 
 std::vector<Location> getComputedResult(Location startLocation, std::vector<Location> locations) {
     
     Location closestLocation = locations[0];
@@ -76,6 +90,7 @@ std::vector<Location> getComputedResult(Location startLocation, std::vector<Loca
     
 }
 
+// function that prints final result of this program. 
 void printResult(Location startLocation, std::vector<Location>& locations) {
 
     std::printf("Start Location: %s %s (%s)\n", 
@@ -94,14 +109,14 @@ void printResult(Location startLocation, std::vector<Location>& locations) {
     
 }
 
-
+// function that computes distance between two location and return it. 
 double getGreatCircleDistanceBetweenTwoLocations(Location startLocation, Location destinationLocation) {
 
     // startLocation
     std::string latitudeDirectionOfStartLocation = startLocation.getLatitude().getDirection();
     std::string longitudeDirectionOfStartLocation = startLocation.getLongitude().getDirection();
 
-    // If direction is North, then 1 ; If direction is South, then -1
+    // IF direction is North, then 1 f direction is South, then -1
     double valueOfLatitudeDirection1 = (latitudeDirectionOfStartLocation == "N") ? 1.0 : -1.0;
     // If direction is East, then 1 ; If direction is West, then -1
     double valueOfLongitudeDirection1 = (longitudeDirectionOfStartLocation == "E") ? 1.0 : -1.0;
@@ -121,11 +136,7 @@ double getGreatCircleDistanceBetweenTwoLocations(Location startLocation, Locatio
     double destinationLocationLatitude = destinationLocation.getLatitude().getCoordinate() * valueOfLatitudeDirection2;
     double destinationLocationLongitude = destinationLocation.getLongitude().getCoordinate()* valueOfLongitudeDirection2;
 
-    
-    // MAY NOT BE USED;
-    // double deltaLatitude = deltaCoordinate(startLocationLatitude, destinationLocationLatitude);
-    //double deltaLongitude = deltaCoordinate(startLocationLongitude, destinationLocationLongitude);
-
+    // Loaction in Radian
     double startLocationLatitudeInRadian = convertDegreeToRadian(startLocationLatitude);
     double destinationLoactionLatitudeInRadian = convertDegreeToRadian(destinationLocationLatitude);
     double startLoactionLongitudeInRadian = convertDegreeToRadian(startLocationLongitude);
@@ -146,19 +157,15 @@ double getGreatCircleDistanceBetweenTwoLocations(Location startLocation, Locatio
     return radiusOfEarthInMiles * c;
 }
 
- /* // difference of two points. 
-double deltaCoordinate(double point1, double point2) {
-    return point2 - point1;
-}
-*/
 
+// Function that convert degree to radian and return the radian.
 double convertDegreeToRadian(double operand) {
     const double PI = atan(1.0)*4.0; // 3.14159
     return operand * (PI / 180.0);
 }
 
 
-// Works fine
+// Function that creates Object Location which contains location of one place and return the Object.
 Location createLocation(std::string rawData) {
     std::string latitudePart = findLatitudePart(rawData);   //Latitude Part
     std::string longitudePart = findLongitudePart(rawData); //Longitude Part
@@ -170,7 +177,7 @@ Location createLocation(std::string rawData) {
 }
 
 
-// WORKS FINE
+// Function that creates Object Latitude which contains Latitude information of one place and return the Object.
 Latitude createLatitude(std::string latitudePart) {
     std::string coordinatePartOfLatitude = findCoordinatePart(latitudePart);
     std::string directionPartOfLatitude = findDirectionPart(latitudePart);
@@ -178,7 +185,7 @@ Latitude createLatitude(std::string latitudePart) {
     return latitude;
 }
 
-// WORKS FINE
+// Functions that creates Object Longitude which contains Longitude information of one place and return the Object
 Longitude createLongitude(std::string longitudePart) {
     std::string coordinatePart = findCoordinatePart(longitudePart);
     std::string directionPart= findDirectionPart(longitudePart);
@@ -186,7 +193,7 @@ Longitude createLongitude(std::string longitudePart) {
     return longitude;
 }
 
-// WORKS FINE : NOT VARIFIED though
+// Varifies latitude part of string is valid or not. 
 bool isValidLatitude(std::string str) {
     int firstBackSlashOffset = getBackSlashPosition(0, str);
 
@@ -204,7 +211,7 @@ bool isValidLatitude(std::string str) {
     }
 }
 
-// WORKS FINE : NOT VARIFIED though
+// Varifies longitude part of string is valid or not. 
 bool isValidLongitude(std::string str) {
     
     int firstBackSlashOffset = getBackSlashPosition(0, str);
@@ -225,7 +232,7 @@ bool isValidLongitude(std::string str) {
     }
 }
  
-// WORKS FINE : NOT VARIFIED though
+// Checks direction in Latitude is right or not. 
 bool isValidLatitudeDirection(std::string str) {
     if(str.length() != 1) 
         return false;
@@ -238,7 +245,7 @@ bool isValidLatitudeDirection(std::string str) {
     }
 }
 
-// WORKS FINE : NOT VARIFIED though
+// Checks direction in Longitude is right or not.
 bool isValidLongitudeDirection(std::string str) {
     if(str.length() != 1) 
         return false;
@@ -250,7 +257,7 @@ bool isValidLongitudeDirection(std::string str) {
     }
 }
 
-// Input: NameOfPlace Part
+// Checks name of place is inputed or not. If length of string is less than 0, it assumes that name of space is incorect.
 bool isValidNameOfPlace(std::string str) {
     if(str.length() == 0)
         return false;
@@ -258,7 +265,7 @@ bool isValidNameOfPlace(std::string str) {
         return true;
 }
 
-// TODO!!!
+// checks number part of longitude or latitude is correct or not.
 bool isValidCoordinate(std::string str) {   
     for(int i = 0; i < (int)str.length(); i++) {
         if( (isNumber(str[i]) || str[i] == '.' ) ) 
@@ -270,7 +277,7 @@ bool isValidCoordinate(std::string str) {
 }
 
 
-// NEWEST WORKS FINE
+// checks range of latitude is right or not
 bool isValidLatitudeCoordinate(std::string latitudeCoordinateStr) {
     
     if(isValidCoordinate(latitudeCoordinateStr)) {
@@ -284,7 +291,7 @@ bool isValidLatitudeCoordinate(std::string latitudeCoordinateStr) {
         return false;
 }
 
-// NEWEST WORKS FINE
+// checks range of longitude is right or not
 bool isValidLongitudeCoordinate(std::string longitudeCooridnateStr) {
     if(isValidCoordinate(longitudeCooridnateStr)) {
         double coordinate = atoi(longitudeCooridnateStr.c_str());
@@ -296,8 +303,7 @@ bool isValidLongitudeCoordinate(std::string longitudeCooridnateStr) {
         return false;
 }
 
-// WORKS SO FAR
-// INPUT: original data
+// Checks input is in valid form or not. 
 bool isValidForm(std::string str) {
     // VALID FORM MUST HAVE TWO EMPTY CHARs which seperate latitude and longtitude.
     int firstEmptyCharOffset = -1;
@@ -314,42 +320,41 @@ bool isValidForm(std::string str) {
         return false;
 }
 
-// WORKS PEFECTLY
+// returns index of empty char ' '
 int getEmptyCharPositionFromString(int start, std::string str) {
     return str.find(" ", start);
 }
 
-// WORKS PERFECTLY
+// returns index of '/' in string. 
 int getBackSlashPosition(int start, std::string str) {
     return str.find("/", start);
 }
 
-// WORKS PERFECTLY
+// checks given char is a number or not. 
 bool isNumber(const char character) {
     return ( (character >= '0') && (character <= '9') );
 }
 
-// WORKS FINE SO FAR
+// 
 std::string findCoordinatePart(std::string str) {
     int backSlashOffset = getBackSlashPosition(0, str);
     return str.substr(0,backSlashOffset);
 }
 
+// Find Direction(N,W,S,E) and return it. 
 std::string findDirectionPart(std::string str) {
     int backSlashOffset = getBackSlashPosition(0, str);
     return str.substr(backSlashOffset+1);
 }
 
-// WORKS PERFECTLY
-// Input : original data string
+// Find latitude part from the input and return latitude string.
 std::string findLatitudePart(std::string str) {
     int locationOfFirstEmptyChar = getEmptyCharPositionFromString(0, str);
     std::string latitudeStr = str.substr(0, locationOfFirstEmptyChar);
     return latitudeStr;
 }
 
-// WORKS PERFECTLY (MIGHT HAVE BUG)
-//  Input: original data string
+// Find longitude part from the input and return longitude string.
 std::string findLongitudePart(std::string str) {
     int locationOfFirstEmptyChar = getEmptyCharPositionFromString(0, str);
     int locationOfSecondEmptyChar = getEmptyCharPositionFromString(locationOfFirstEmptyChar+1, str);
@@ -359,6 +364,7 @@ std::string findLongitudePart(std::string str) {
     return longtitudeStr;
 }
 
+// Find name of location from the input and return string of name of location.
 std::string findNameOfLocationPart(std::string str) {
     int locationOfFirstEmptyChar = getEmptyCharPositionFromString(0, str);
     int locationOfSecondEmptyChar = getEmptyCharPositionFromString(locationOfFirstEmptyChar+1, str);
@@ -366,8 +372,7 @@ std::string findNameOfLocationPart(std::string str) {
     return str.substr(locationOfSecondEmptyChar+1);
 }
 
-// Works fine.
-// Input: original string
+// Checks user typed input value is valid or not. 
 bool isValidInput(std::string str) {
     if( isValidForm(str) ) {
         std::string part1 = findLatitudePart(str);  //Latitude Part

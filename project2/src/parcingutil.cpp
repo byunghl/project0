@@ -99,7 +99,7 @@ double* generalizedPaserForDouble(int numberOfGradeArtifact, std::string str) {
 student_info* studentInfoParser(std::string str) {
 	int emptyCharOffset = str.find(" ", 0);
 	std::string studentIdStr = str.substr(0, emptyCharOffset);
-	std::string studentName = str.substr(emptyCharOffset);
+	std::string studentName = str.substr(emptyCharOffset+1);
 	student_info* aStudentInfo = new student_info;
 	aStudentInfo->studentID = atoi(studentIdStr.c_str());
 	aStudentInfo->nameOfStduent = studentName;

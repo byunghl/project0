@@ -95,16 +95,91 @@ CMakeFiles/a.out.dir/src/parcingutil.cpp.o.provides: CMakeFiles/a.out.dir/src/pa
 
 CMakeFiles/a.out.dir/src/parcingutil.cpp.o.provides.build: CMakeFiles/a.out.dir/src/parcingutil.cpp.o
 
+CMakeFiles/a.out.dir/src/evaluator.cpp.o: CMakeFiles/a.out.dir/flags.make
+CMakeFiles/a.out.dir/src/evaluator.cpp.o: ../src/evaluator.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ics45c/projects/project2/bin/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/a.out.dir/src/evaluator.cpp.o"
+	/usr/bin/clang++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/a.out.dir/src/evaluator.cpp.o -c /home/ics45c/projects/project2/src/evaluator.cpp
+
+CMakeFiles/a.out.dir/src/evaluator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/a.out.dir/src/evaluator.cpp.i"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ics45c/projects/project2/src/evaluator.cpp > CMakeFiles/a.out.dir/src/evaluator.cpp.i
+
+CMakeFiles/a.out.dir/src/evaluator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/a.out.dir/src/evaluator.cpp.s"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ics45c/projects/project2/src/evaluator.cpp -o CMakeFiles/a.out.dir/src/evaluator.cpp.s
+
+CMakeFiles/a.out.dir/src/evaluator.cpp.o.requires:
+.PHONY : CMakeFiles/a.out.dir/src/evaluator.cpp.o.requires
+
+CMakeFiles/a.out.dir/src/evaluator.cpp.o.provides: CMakeFiles/a.out.dir/src/evaluator.cpp.o.requires
+	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/evaluator.cpp.o.provides.build
+.PHONY : CMakeFiles/a.out.dir/src/evaluator.cpp.o.provides
+
+CMakeFiles/a.out.dir/src/evaluator.cpp.o.provides.build: CMakeFiles/a.out.dir/src/evaluator.cpp.o
+
+CMakeFiles/a.out.dir/src/input_requester.cpp.o: CMakeFiles/a.out.dir/flags.make
+CMakeFiles/a.out.dir/src/input_requester.cpp.o: ../src/input_requester.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ics45c/projects/project2/bin/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/a.out.dir/src/input_requester.cpp.o"
+	/usr/bin/clang++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/a.out.dir/src/input_requester.cpp.o -c /home/ics45c/projects/project2/src/input_requester.cpp
+
+CMakeFiles/a.out.dir/src/input_requester.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/a.out.dir/src/input_requester.cpp.i"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ics45c/projects/project2/src/input_requester.cpp > CMakeFiles/a.out.dir/src/input_requester.cpp.i
+
+CMakeFiles/a.out.dir/src/input_requester.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/a.out.dir/src/input_requester.cpp.s"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ics45c/projects/project2/src/input_requester.cpp -o CMakeFiles/a.out.dir/src/input_requester.cpp.s
+
+CMakeFiles/a.out.dir/src/input_requester.cpp.o.requires:
+.PHONY : CMakeFiles/a.out.dir/src/input_requester.cpp.o.requires
+
+CMakeFiles/a.out.dir/src/input_requester.cpp.o.provides: CMakeFiles/a.out.dir/src/input_requester.cpp.o.requires
+	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/input_requester.cpp.o.provides.build
+.PHONY : CMakeFiles/a.out.dir/src/input_requester.cpp.o.provides
+
+CMakeFiles/a.out.dir/src/input_requester.cpp.o.provides.build: CMakeFiles/a.out.dir/src/input_requester.cpp.o
+
+CMakeFiles/a.out.dir/src/outputer.cpp.o: CMakeFiles/a.out.dir/flags.make
+CMakeFiles/a.out.dir/src/outputer.cpp.o: ../src/outputer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ics45c/projects/project2/bin/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/a.out.dir/src/outputer.cpp.o"
+	/usr/bin/clang++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/a.out.dir/src/outputer.cpp.o -c /home/ics45c/projects/project2/src/outputer.cpp
+
+CMakeFiles/a.out.dir/src/outputer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/a.out.dir/src/outputer.cpp.i"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/ics45c/projects/project2/src/outputer.cpp > CMakeFiles/a.out.dir/src/outputer.cpp.i
+
+CMakeFiles/a.out.dir/src/outputer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/a.out.dir/src/outputer.cpp.s"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/ics45c/projects/project2/src/outputer.cpp -o CMakeFiles/a.out.dir/src/outputer.cpp.s
+
+CMakeFiles/a.out.dir/src/outputer.cpp.o.requires:
+.PHONY : CMakeFiles/a.out.dir/src/outputer.cpp.o.requires
+
+CMakeFiles/a.out.dir/src/outputer.cpp.o.provides: CMakeFiles/a.out.dir/src/outputer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/outputer.cpp.o.provides.build
+.PHONY : CMakeFiles/a.out.dir/src/outputer.cpp.o.provides
+
+CMakeFiles/a.out.dir/src/outputer.cpp.o.provides.build: CMakeFiles/a.out.dir/src/outputer.cpp.o
+
 # Object files for target a.out
 a_out_OBJECTS = \
 "CMakeFiles/a.out.dir/src/main.cpp.o" \
-"CMakeFiles/a.out.dir/src/parcingutil.cpp.o"
+"CMakeFiles/a.out.dir/src/parcingutil.cpp.o" \
+"CMakeFiles/a.out.dir/src/evaluator.cpp.o" \
+"CMakeFiles/a.out.dir/src/input_requester.cpp.o" \
+"CMakeFiles/a.out.dir/src/outputer.cpp.o"
 
 # External object files for target a.out
 a_out_EXTERNAL_OBJECTS =
 
 a.out: CMakeFiles/a.out.dir/src/main.cpp.o
 a.out: CMakeFiles/a.out.dir/src/parcingutil.cpp.o
+a.out: CMakeFiles/a.out.dir/src/evaluator.cpp.o
+a.out: CMakeFiles/a.out.dir/src/input_requester.cpp.o
+a.out: CMakeFiles/a.out.dir/src/outputer.cpp.o
 a.out: CMakeFiles/a.out.dir/build.make
 a.out: CMakeFiles/a.out.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable a.out"
@@ -116,6 +191,9 @@ CMakeFiles/a.out.dir/build: a.out
 
 CMakeFiles/a.out.dir/requires: CMakeFiles/a.out.dir/src/main.cpp.o.requires
 CMakeFiles/a.out.dir/requires: CMakeFiles/a.out.dir/src/parcingutil.cpp.o.requires
+CMakeFiles/a.out.dir/requires: CMakeFiles/a.out.dir/src/evaluator.cpp.o.requires
+CMakeFiles/a.out.dir/requires: CMakeFiles/a.out.dir/src/input_requester.cpp.o.requires
+CMakeFiles/a.out.dir/requires: CMakeFiles/a.out.dir/src/outputer.cpp.o.requires
 .PHONY : CMakeFiles/a.out.dir/requires
 
 CMakeFiles/a.out.dir/clean:

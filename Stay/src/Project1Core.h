@@ -1,3 +1,5 @@
+// Project1Core.h
+
 #ifndef PROJECT1CORE_H
 #define PROJECT1CORE_H
 
@@ -11,7 +13,6 @@ int getSecondLineInput();
 std::vector<Location> getThirdLineInput(int numberOfTarget);
 
 double getGreatCircleDistanceBetweenTwoLocations(Location startLocation, Location destinationLocation);
-double deltaCoordinate(double point1, double point2);
 double convertDegreeToRadian(double operand);
 std::vector<Location> getComputedResult(Location startLocation, std::vector<Location> locations) ;
 void printResult(Location startLocation, std::vector<Location>& locations);

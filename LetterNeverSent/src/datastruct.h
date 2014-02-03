@@ -10,7 +10,8 @@ struct grade_artifact {
 
 struct student_info {
 	unsigned int studentID;
-	std::string nameOfStduent;	
+	std::string nameOfStduent;
+	int* rawScores;
 };
 
 

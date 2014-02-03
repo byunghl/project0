@@ -1,3 +1,5 @@
+// main.cpp
+
 /*  Author: Byung Ho Lee
 **  Stduent ID: #60626811
 **
@@ -11,7 +13,7 @@
 int main() {
 
     // Program Start Here!
-    Location startLocation = getFirstLineInput();   
+    Location startLocation = getFirstLineInput();
     int numberOfTargetLocation = getSecondLineInput();
     std::vector<Location> targetLocations = getThirdLineInput(numberOfTargetLocation);
     std::vector<Location> resultOfComputation = getComputedResult(startLocation, targetLocations);

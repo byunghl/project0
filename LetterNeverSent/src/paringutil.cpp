@@ -14,27 +14,31 @@ int* generalizedParser(int length, std::string str) {
 	int previous = 0;
 	int counter = 0;
 	std::string temp = "";
+	if(numberOfEmptyChar == 0) {
+		temp = str.substr(start);
+		pValues[0] = stringToInteger(temp);
+	} else {
+		for(int i = 0; i < numberOfEmptyChar; i++) {
 
-	for(int i = 0; i < numberOfEmptyChar; i++) {
-
-		current = str.find(" ", start);
-		// Later delete print part under it.
-		if((current !=-1) && i==0 ) {
-			temp = str.substr(start, current) ;
-			pValues[i] = stringToInteger(temp);
-			previous = current;
-			start = current+1;
-			counter++;
-		} else {
-			temp = str.substr(start, (current-previous));
-			pValues[i] = stringToInteger(temp);
-			previous = current;
-			start = current+1;
-			counter++;
-		}
-		if(i == (numberOfEmptyChar - 1) ) {
-			temp = str.substr(start);
-			pValues[i+1] = stringToInteger(temp);
+			current = str.find(" ", start);
+			// Later delete print part under it.
+			if((current !=-1) && i==0 ) {
+				temp = str.substr(start, current) ;
+				pValues[i] = stringToInteger(temp);
+				previous = current;
+				start = current+1;
+				counter++;
+			} else {
+				temp = str.substr(start, (current-previous));
+				pValues[i] = stringToInteger(temp);
+				previous = current;
+				start = current+1;
+				counter++;
+			}
+			if(i == (numberOfEmptyChar - 1) ) {
+				temp = str.substr(start);
+				pValues[i+1] = stringToInteger(temp);
+			}
 		}
 	}
 	
