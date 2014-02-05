@@ -1,13 +1,20 @@
+// parcingutil.cpp
+
+// Author : Byung Ho Lee
+
 #include "parcingutil.h"
 
+// Convert string to integer
 int stringToInteger(std::string str) {
 	return atoi(str.c_str());
 }
 
+// Conver string to double
 double stringToDouble(std::string str){
 	return atof(str.c_str());
 }
 
+// Parsing sequence inputed string value into a set of integers using dynamic array.
 int* generalizedParser(int length, std::string str) {
 	
 	int* pValues = new int[length];
@@ -51,6 +58,7 @@ int* generalizedParser(int length, std::string str) {
 
 }
 
+// Parsing sequence inputed value into a set of double using dynamic array
 double* generalizedPaserForDouble(int numberOfGradeArtifact, std::string str) {
 
 	double* pValues = new double[numberOfGradeArtifact];
@@ -94,8 +102,7 @@ double* generalizedPaserForDouble(int numberOfGradeArtifact, std::string str) {
 
 }
 
-
-
+// Student inforamtion input parser. 
 student_info* studentInfoParser(std::string str) {
 	int emptyCharOffset = str.find(" ", 0);
 	std::string studentIdStr = str.substr(0, emptyCharOffset);

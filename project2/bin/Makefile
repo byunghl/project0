@@ -111,29 +111,29 @@ a.out/fast:
 	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/build
 .PHONY : a.out/fast
 
-src/evaluator.o: src/evaluator.cpp.o
-.PHONY : src/evaluator.o
+src/evaluation.o: src/evaluation.cpp.o
+.PHONY : src/evaluation.o
 
 # target to build an object file
-src/evaluator.cpp.o:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/evaluator.cpp.o
-.PHONY : src/evaluator.cpp.o
+src/evaluation.cpp.o:
+	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/evaluation.cpp.o
+.PHONY : src/evaluation.cpp.o
 
-src/evaluator.i: src/evaluator.cpp.i
-.PHONY : src/evaluator.i
+src/evaluation.i: src/evaluation.cpp.i
+.PHONY : src/evaluation.i
 
 # target to preprocess a source file
-src/evaluator.cpp.i:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/evaluator.cpp.i
-.PHONY : src/evaluator.cpp.i
+src/evaluation.cpp.i:
+	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/evaluation.cpp.i
+.PHONY : src/evaluation.cpp.i
 
-src/evaluator.s: src/evaluator.cpp.s
-.PHONY : src/evaluator.s
+src/evaluation.s: src/evaluation.cpp.s
+.PHONY : src/evaluation.s
 
 # target to generate assembly for a file
-src/evaluator.cpp.s:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/evaluator.cpp.s
-.PHONY : src/evaluator.cpp.s
+src/evaluation.cpp.s:
+	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/evaluation.cpp.s
+.PHONY : src/evaluation.cpp.s
 
 src/input_requester.o: src/input_requester.cpp.o
 .PHONY : src/input_requester.o
@@ -183,29 +183,29 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/outputer.o: src/outputer.cpp.o
-.PHONY : src/outputer.o
+src/output.o: src/output.cpp.o
+.PHONY : src/output.o
 
 # target to build an object file
-src/outputer.cpp.o:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/outputer.cpp.o
-.PHONY : src/outputer.cpp.o
+src/output.cpp.o:
+	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/output.cpp.o
+.PHONY : src/output.cpp.o
 
-src/outputer.i: src/outputer.cpp.i
-.PHONY : src/outputer.i
+src/output.i: src/output.cpp.i
+.PHONY : src/output.i
 
 # target to preprocess a source file
-src/outputer.cpp.i:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/outputer.cpp.i
-.PHONY : src/outputer.cpp.i
+src/output.cpp.i:
+	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/output.cpp.i
+.PHONY : src/output.cpp.i
 
-src/outputer.s: src/outputer.cpp.s
-.PHONY : src/outputer.s
+src/output.s: src/output.cpp.s
+.PHONY : src/output.s
 
 # target to generate assembly for a file
-src/outputer.cpp.s:
-	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/outputer.cpp.s
-.PHONY : src/outputer.cpp.s
+src/output.cpp.s:
+	$(MAKE) -f CMakeFiles/a.out.dir/build.make CMakeFiles/a.out.dir/src/output.cpp.s
+.PHONY : src/output.cpp.s
 
 src/parcingutil.o: src/parcingutil.cpp.o
 .PHONY : src/parcingutil.o
@@ -240,18 +240,18 @@ help:
 	@echo "... a.out"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... src/evaluator.o"
-	@echo "... src/evaluator.i"
-	@echo "... src/evaluator.s"
+	@echo "... src/evaluation.o"
+	@echo "... src/evaluation.i"
+	@echo "... src/evaluation.s"
 	@echo "... src/input_requester.o"
 	@echo "... src/input_requester.i"
 	@echo "... src/input_requester.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/outputer.o"
-	@echo "... src/outputer.i"
-	@echo "... src/outputer.s"
+	@echo "... src/output.o"
+	@echo "... src/output.i"
+	@echo "... src/output.s"
 	@echo "... src/parcingutil.o"
 	@echo "... src/parcingutil.i"
 	@echo "... src/parcingutil.s"
